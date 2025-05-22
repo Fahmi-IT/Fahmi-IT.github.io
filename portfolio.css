@@ -1,0 +1,415 @@
+/*
+Name: Fahmi Sajid Ahmed
+Student Number: 300250180
+*/
+
+/*Reference Variables*/
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #a5b4fc;
+    --secondary-color: #10b981;
+    --accent-color: #f59e0b;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --bg-primary: #ffffff;
+    --border-color: #e5e7eb; /*subtle off-white color*/
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+  }
+  
+  /*CSS for every element (because I do not want to copy-paste)*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.1; }
+  h2 { font-size: 2.25rem; font-weight: 600; line-height: 1.2; }
+  h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.3; }
+  h4 { font-size: 1.25rem; font-weight: 500; line-height: 1.4; }
+  h5 { font-size: 1.125rem; font-weight: 500; line-height: 1.4; }
+  
+  @media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.875rem; }
+  }
+  
+  header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 6rem 0 8rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+    transform: rotate(15deg);
+    pointer-events: none;
+  }
+  
+  .header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .header-title {
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .header-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+  
+  section {
+    padding: 5rem 0;
+    position: relative;
+  }
+  
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .section-title {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+  }
+  
+  .section-description {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .about-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+  
+  .fun-fact {
+    background: linear-gradient(135deg, var(--bg-primary), #fef3c7);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .fun-fact::before {
+    font-size: 1.5rem;
+    position: absolute;
+    top: -0.75rem;
+    left: 1.5rem;
+    background: var(--bg-primary);
+    padding: 0 0.5rem;
+  }
+  
+  .work-methodology {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .methodology-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+  }
+  
+  .methodology-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .methodology-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  
+  .methodology-card h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .methodology-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+  }
+  
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.75rem;
+    top: 1.5rem;
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    border: 3px solid var(--bg-primary);
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .timeline-date {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-title {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  
+  .case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 3rem auto 0;
+  }
+  
+  .case-studies-grid .case-study-card {
+    width: 100%;
+    height: 280px;
+  }
+  
+  .case-study-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .case-study-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
+  }
+  
+  .case-study-header {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .case-study-header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .case-study-icon {
+    font-size: 2rem;
+    color: white;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .case-study-content {
+    padding: 1.25rem;
+  }
+  
+  .case-study-title {
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  
+  .case-study-description {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .case-study-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    background-color: #fef3c7;
+    color: #d97706;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  footer {
+    background: var(--text-primary);
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 4rem;
+  }
+  
+  footer p {
+    opacity: 0.8;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    section {
+      padding: 3rem 0;
+    }
+    
+    .section-container {
+      padding: 0 1rem;
+    }
+  
+    .work-methodology {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .case-studies-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 100%;
+    }
+  
+    .case-studies-grid .case-study-card {
+      width: 100%;
+      height: auto;
+    }
+  
+    .methodology-card,
+    .timeline-item,
+    .case-study-card {
+      padding: 1.25rem;
+    }
+  
+    header {
+      padding: 4rem 0 6rem;
+    }
+  }
+  
+  /*Animation*/
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .section-container > * {
+    animation: fadeInUp 0.6s ease-out;
+  }
