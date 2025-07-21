@@ -413,3 +413,19 @@ Student Number: 300250180
   .section-container > * {
     animation: fadeInUp 0.6s ease-out;
   }
+
+  .cyclefix_pro {
+    background: url('./screenshots/cyclefixpro.png') center/cover no-repeat;
+  }
+
+  .eotfd {
+    background: url('./screenshots/eotfd.png') center/cover no-repeat;
+  }
+
+  .gamestatshub {
+    background: url('./screenshots/gamestatshub.png') center/cover no-repeat;
+  }
+
+  .neoshop {
+    background: url('./screenshots/neoshop.png') center/cover no-repeat;
+  }
